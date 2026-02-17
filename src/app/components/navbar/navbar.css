@@ -34,3 +34,8 @@
 .navbar-links a:hover {
   color: #b700ff;
 }
+
+.navbar-links a.active {
+  color: #e94560;
+  font-weight: bold;
+}

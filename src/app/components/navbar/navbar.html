@@ -3,8 +3,12 @@
     <span class="logo">Giulio Agnello</span>
   </div>
   <ul class="navbar-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#footer">Contatti</a></li>
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
   </ul>
 </nav>

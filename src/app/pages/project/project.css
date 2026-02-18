@@ -1,8 +1,9 @@
 .cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  flex-direction: row;
   flex-wrap: wrap;
+  gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -10,8 +11,9 @@
 .card {
   background-color: #1a1a2e;
   border-radius: 16px;
-  padding: 2.5rem 2rem;
+  padding: 1rem;
   width: 300px;
+
   transition:
     transform 0.3s,
     box-shadow 0.3s;
@@ -25,17 +27,61 @@
 .card-icon {
   font-size: 3rem;
   display: block;
-  margin-bottom: 1.5rem;
 }
 
 .card h3 {
   font-size: 1.5rem;
   color: #e94560;
   margin-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .card p {
   color: #a8a8b3;
   line-height: 1.6;
   font-size: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.linksBtn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background-color: #e94560;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-right: 1rem;
+}
+
+.linksBtn:hover {
+  background-color: #d63447;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-decoration: none;
+  color: #e94560;
+}
+
+.link:hover {
+  color: #d63447;
+  text-shadow: #e94560 0px 0px 8px;
+  scale: 1.1;
+  transition: all 0.3s ease;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

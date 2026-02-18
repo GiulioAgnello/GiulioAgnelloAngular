@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './project.css',
 })
 export class Project {
+  selectedProject: any = null;
+
+  openModal(project: any) {
+    this.selectedProject = project;
+  }
+
+  closeModal() {
+    this.selectedProject = null;
+  }
+
+  // array di progetti hardcoded
+
   projects = [
     {
       id: 1,

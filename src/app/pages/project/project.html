@@ -4,7 +4,13 @@
     <div class="cards">
       @for (project of projects; track project.id) {
         <div class="card">
-          <img class="card-icon" [src]="project.img" [alt]="project.title" />
+          <img
+            (click)="openModal(project)"
+            class="card-icon"
+            [src]="project.img"
+            [alt]="project.title"
+            style="cursor: pointer"
+          />
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
           <div class="tech-stack">
@@ -12,10 +18,10 @@
           </div>
           <div class="links">
             @if (project.link) {
-              <a [href]="project.link" target="_blank" class="btn btn-primary">View Project</a>
+              <a [href]="project.link" target="_blank" class="btn linksBtn">View Project</a>
             }
             @if (project.code?.frontend) {
-              <a [href]="project.code.frontend" target="_blank" class="btn btn-secondary"
+              <a [href]="project.code.frontend" target="_blank" class="btn btn-secondary me-2"
                 >Frontend</a
               >
             }
@@ -26,5 +32,48 @@
         </div>
       }
     </div>
+    <div class="link">
+      <h2>
+        <a class="link" href="https://github.com/GiulioAgnello?tab=repositories"
+          >Per tutti gli altri progetti</a
+        >
+      </h2>
+    </div>
   </div>
 </section>
+
+@if (selectedProject) {
+  <div class="modal-backdrop" (click)="closeModal()">
+    <div
+      class="modal-content"
+      (click)="$event.stopPropagation()"
+      style="position: relative; max-width: 90%; max-height: 90%"
+    >
+      <button
+        (click)="closeModal()"
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: white;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        "
+      >
+        ✕
+      </button>
+      <img
+        [src]="selectedProject.img"
+        [alt]="selectedProject.title"
+        style="width: 100%; height: auto; object-fit: contain"
+      />
+      <p style="color: white; text-align: center; margin-top: 20px; font-size: 18px">
+        {{ selectedProject.title }}
+      </p>
+    </div>
+  </div>
+}

@@ -65,3 +65,12 @@
   font-size: 0.9rem;
   color: #555577;
 }
+
+.mailto {
+  color: #a8a8b3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.mailto:hover {
+  color: #e94560;
+}

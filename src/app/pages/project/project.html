@@ -20,12 +20,12 @@
             @if (project.link) {
               <a [href]="project.link" target="_blank" class="btn linksBtn">View Project</a>
             }
-            @if (project.code?.frontend) {
+            @if (project.code.frontend) {
               <a [href]="project.code.frontend" target="_blank" class="btn btn-secondary me-2"
                 >Frontend</a
               >
             }
-            @if (project.code?.backend) {
+            @if (project.code.backend) {
               <a [href]="project.code.backend" target="_blank" class="btn btn-secondary">Backend</a>
             }
           </div>

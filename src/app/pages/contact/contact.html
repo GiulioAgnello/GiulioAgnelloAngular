@@ -1,20 +1,24 @@
 <section class="contact">
-  <div class="contact-container">
-    <h1 className="fw-bold">I miei contatti</h1>
-    <p>
-      Sono disponibile per collaborazioni, freelance e opportunità full-time. Scrivimi o raggiungimi
-      sui social.
-    </p>
-    <div className="row g-4">
-      @for (contact of contacts; track contact.id) {
-        <div className=" cardContact col-6 col-md-6 col-lg-4">
-          <h3>{{ contact.label }}</h3>
-          <p>{{ contact.value }}</p>
-          @if (contact.href) {
-            <a [href]="contact.href" target="_blank" className="btn btn-primary mt-3">Contattami</a>
-          }
-        </div>
-      }
+  <div class="container">
+    <div class="header text-center py-5">
+      <h1 class="fw-bold">I miei contatti</h1>
+      <p>
+        Sono disponibile per collaborazioni, freelance e opportunità full-time. Scrivimi o
+        raggiungimi sui social.
+      </p>
+    </div>
+    <div class="container">
+      <div class="row g-4 d-flex justify-content-center align-items-center">
+        @for (contact of contacts; track contact.id) {
+          <div class="col-12 col-md-6 col-lg-4">
+            <h3>{{ contact.label }}</h3>
+            <p>{{ contact.value }}</p>
+            @if (contact.href) {
+              <a [href]="contact.href" target="_blank" class="btn btn-primary mt-3">Contattami</a>
+            }
+          </div>
+        }
+      </div>
     </div>
   </div>
 </section>

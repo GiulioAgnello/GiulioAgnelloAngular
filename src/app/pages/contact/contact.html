@@ -1,4 +1,4 @@
-<section class="contact">
+<section class="contact contactPage">
   <div class="container">
     <div class="header text-center py-5">
       <h1 class="fw-bold">I miei contatti</h1>
@@ -7,16 +7,40 @@
         raggiungimi sui social.
       </p>
     </div>
-    <div class="container">
+    <div class="container py-5">
       <div class="row g-4 d-flex justify-content-center align-items-center">
         @for (contact of contacts; track contact.id) {
-          <div class="col-12 col-md-6 col-lg-4">
-            <h3>{{ contact.label }}</h3>
-            <p>{{ contact.value }}</p>
-            @if (contact.href) {
-              <a [href]="contact.href" target="_blank" class="btn btn-primary mt-3">Contattami</a>
-            }
-          </div>
+          @if (contact.href) {
+            <a
+              [href]="contact.href"
+              target="_blank"
+              class="cardContact col-12 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center"
+              style="text-decoration: none; color: inherit"
+            >
+              <i [class]="getIconClass(contact)" style="font-size: 3rem; margin-bottom: 1rem"></i>
+              <h3>{{ contact.label }}</h3>
+              <p>{{ contact.value }}</p>
+            </a>
+          } @else {
+            <div
+              class="cardContact col-12 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center"
+            >
+              <i [class]="getIconClass(contact)" style="font-size: 3rem; margin-bottom: 1rem"></i>
+              <h3>{{ contact.label }}</h3>
+              <p>{{ contact.value }}</p>
+            </div>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <h3 class="text-center mb-4">Interessi e Tecnologie</h3>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        @for (interest of interests; track $index) {
+          <span class="interest-badge" style="font-size: 1rem; padding: 0.75rem 1.5rem">
+            {{ interest }}
+          </span>
         }
       </div>
     </div>

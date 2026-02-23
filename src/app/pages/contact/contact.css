@@ -1,11 +1,15 @@
+.contactPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
 .submit-button {
-  width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #e94560;
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+
   font-weight: bold;
   cursor: pointer;
   transition:
@@ -21,8 +25,30 @@
 .cardContact {
   background-color: #1a1a2e;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
+  margin: 0.5rem;
   border: 1px solid #0f3460;
   text-align: left;
   margin-top: 2rem;
+}
+
+.cardContact:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+}
+
+.interest-badge {
+  display: inline-block;
+  background-color: #e94560;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.interest-badge:hover {
+  background-color: #d63447;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }

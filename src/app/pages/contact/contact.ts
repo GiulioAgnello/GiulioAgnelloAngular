@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
@@ -50,5 +51,26 @@ export class Contact {
       value: '@giulio.agnello.1',
       href: 'https://www.facebook.com/giulio.agnello.1/',
     },
+  ];
+
+  getIconClass(contact: any): string {
+    const iconMap: { [key: string]: string } = {
+      Email: 'fa-solid fa-envelope',
+      WhatsApp: 'fa-brands fa-whatsapp',
+      GitHub: 'fa-brands fa-github',
+      LinkedIn: 'fa-brands fa-linkedin',
+      Instagram: 'fa-brands fa-instagram',
+      Facebook: 'fa-brands fa-facebook',
+    };
+    const label = contact.label || contact.icon;
+    return iconMap[label] || 'fa-solid fa-link';
+  }
+
+  interests = [
+    'Sviluppo web',
+    'Intelligenza artificiale',
+    'Design UI/UX',
+    'Tecnologie emergenti',
+    'Open source',
   ];
 }
